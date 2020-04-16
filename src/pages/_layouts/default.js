@@ -13,13 +13,12 @@ import { Wrapper, Container } from './styles';
 
 export default function AuthLayout({ children }) {
   const { pathname } = useLocation();
-  console.log(pathname);
   return (
     <Wrapper>
       <Navbar collapseOnSelect expand="lg">
         <Link id="linkTitle" className="nav-link" to="/">
           <FaMicrophone color="#ffffff" size={35} />{' '}
-          <span id="title">Decode Text</span>
+          <span id="title">Decupator</span>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav">
           <FaBars color="#ffffff" size={30} />
@@ -34,7 +33,7 @@ export default function AuthLayout({ children }) {
               to="/"
             >
               <FaRegFileAlt color="#ffffff" size={20} />
-              <span>Texts</span>
+              <span>Textos</span>
             </Link>
             <Link
               className={
@@ -43,7 +42,7 @@ export default function AuthLayout({ children }) {
               to="/decode"
             >
               <FaMicrophone color="#ffffff" size={20} />
-              <span>Decode</span>
+              <span>Decupador</span>
             </Link>
 
             <Link
@@ -53,7 +52,7 @@ export default function AuthLayout({ children }) {
               to="/metrics"
             >
               <FaChartLine color="#ffffff" size={20} />
-              <span>Metrics</span>
+              <span>Métricas</span>
             </Link>
           </Nav>
         </Navbar.Collapse>

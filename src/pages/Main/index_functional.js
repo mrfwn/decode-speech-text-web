@@ -247,74 +247,60 @@ export default function Main() {
             <img src={logoBDPE} alt="LogoProgram" />
           </div>
           <div className="bodyModel">
-            <div className="bodyBoxSelect">
-              <div className="BoxElement">
-                <strong>Titulo:</strong>
-                <input
-                  value={titleModal}
-                  placeholder="Titulo"
-                  onChange={(e) => setTitleModal(e.target.value)}
-                />
-              </div>
-              <div className="BoxElement">
-                <strong>Nome:</strong>
-                <input
-                  maxLength="16"
-                  type="text"
-                  value={nameModal}
-                  placeholder="Nome e Sobrenome"
-                  onChange={(e) => setNameModal(e.target.value)}
-                />
-              </div>
-              <div className="BoxElement">
-                <strong>login:</strong>
-                <input
-                  type="text"
-                  maxLength="10"
-                  value={loginModal}
-                  placeholder="Login"
-                  onChange={(e) => setLoginModal(e.target.value)}
-                />
-              </div>
-              <div className="BoxElement">
-                <strong>Localidade:</strong>
-                <select
-                  value={localityModal}
-                  onChange={(e) => setLocalityModal(e.target.value)}
-                >
-                  <option selected disabled>
-                    Escolha uma localidade
-                  </option>
-                  <option value="PE">Pernambuco</option>
-                  <option value="DF">Brasília</option>
-                </select>
-              </div>
-              <div className="BoxElement">
-                <strong>Programa:</strong>
-                <select
-                  value={programModal}
-                  onChange={(e) => setProgramModal(e.target.value)}
-                >
-                  {localityModal === 'PE' && (
-                    <>
-                      <option value="BDPE">BDPE</option>
-                      <option value="G1PE">G1PE</option>
-                    </>
-                  )}
-
-                  {localityModal === 'DF' && (
-                    <>
-                      <option value="BDDF">BDDF</option>
-                      <option value="G1DF">G1DF</option>
-                    </>
-                  )}
-                </select>
-              </div>
-            </div>
             <textarea
               defaultValue={textModal}
               onChange={(e) => setTextModal(e.target.value)}
             />
+
+            <div className="bodyBoxSelect">
+              <input
+                value={titleModal}
+                placeholder="Titulo"
+                onChange={(e) => setTitleModal(e.target.value)}
+              />
+              <input
+                maxLength="16"
+                type="text"
+                value={nameModal}
+                placeholder="Nome e Sobrenome"
+                onChange={(e) => setNameModal(e.target.value)}
+              />
+              <input
+                type="text"
+                maxLength="10"
+                value={loginModal}
+                placeholder="Login"
+                onChange={(e) => setLoginModal(e.target.value)}
+              />
+              <select
+                value={localityModal}
+                onChange={(e) => setLocalityModal(e.target.value)}
+              >
+                <option selected disabled>
+                  Escolha uma localidade
+                </option>
+                <option value="PE">Pernambuco</option>
+                <option value="DF">Brasília</option>
+              </select>
+              <select
+                value={programModal}
+                onChange={(e) => setProgramModal(e.target.value)}
+              >
+                {localityModal === 'PE' && (
+                  <>
+                    <option value="BDPE">BDPE</option>
+                    <option value="G1PE">G1PE</option>
+                  </>
+                )}
+
+                {localityModal === 'DF' && (
+                  <>
+                    <option value="BDDF">BDDF</option>
+                    <option value="G1DF">G1DF</option>
+                  </>
+                )}
+              </select>
+            </div>
           </div>
           <div className="footerModel">
             <button type="button" onClick={handleClose}>
